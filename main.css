@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+
+}
+
+
+body {
+    background-color: black;
+  
+    height: 100vh;
+}
+
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+h1 {
+  
+    color: aquamarine;
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 3px;
+    margin: 30px;
+    
+}
+
+form {
+    border: 2px solid blue;
+    margin: 20px 0;
+    padding: 60px 50px;
+    border-radius: 15px;
+    background-color: azure;
+   
+}
+
+form .input-field {
+    margin-bottom: 20px;
+    
+}
+
+
+form .input-field input {
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    margin-top: 3px;
+    padding: 4px;
+}:focus {
+    background-color: rgba(44, 42, 42, 0.151);
+}
+
+
+form .btn-logar {
+    display: block;
+    border-radius: 25px;
+    background-color: rgba(0, 128, 0, 0.4);
+    border: none;
+    padding: 6px;
+    min-width: 100px;
+    margin: auto;
+    
+}
+
+form .btn-logar:focus-within  {
+    background-color: rgba(0, 128, 0, 0.8);
+}
+
+
+
+form {
+     
+    animation: rise 1.5s;
+   
+     
+}
+
+
+@keyframes rise {
+    from {
+        transform: translateY(-75vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+.form-down {
+    animation: down 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes down {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform:translateY(100vh);
+    }
+}
+
+
+.form-empty  {
+    animation: emptyField 0.3s linear, rise paused; 
+    animation-iteration-count: 2;
+    /*pra não ficar (rise paused >>> animation-play-state: paused;)
+    repetindo o efeito do rise aqui nessa animação.
+    */
+}
+
+@keyframes emptyField {
+    0% {
+        transform: translateX(-7%)
+    }
+    33% {
+        transform: translateX(7%)
+    }
+    66% {
+        transform: translateX(-3%)
+    }
+    99% {
+        transform: translateX(3%)
+    }
+}
+
+body {
+    overflow: hidden;
+}
+
+.among li {
+    
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    display: block;
+    bottom: -30px;
+    animation: aoInfinito infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes aoInfinito {
+    from {
+        transform: translateY(0);
+    } 
+    to {
+        transform:translateY(-900px) rotate(300deg);
+    }
+}
